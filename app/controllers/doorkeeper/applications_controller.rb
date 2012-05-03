@@ -13,7 +13,7 @@ module Doorkeeper
     end
 
     def create
-      @application = Application.new(params[:application])
+      @application = Application.new(params[:doorkeeper_application])
       flash[:notice] = "Application created" if @application.save
       respond_with @application
     end
@@ -28,14 +28,14 @@ module Doorkeeper
 
     def update
       @application = Application.find(params[:id])
-      flash[:notice] = "Application updated" if @application.update_attributes(params[:application])
+      flash[:notice] = "Application updated" if @application.update_attributes(params[:doorkeeper_application])
       respond_with @application
     end
 
     def destroy
       @application = Application.find(params[:id])
       flash[:notice] = "Application deleted" if @application.destroy
-      redirect_to applications_url
+      redirect_to doorkeeper_applications_url
     end
   end
 end

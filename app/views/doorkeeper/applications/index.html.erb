@@ -3,7 +3,7 @@
     <h2>Your applications</h2>
   </header>
 
-  <p><%= link_to 'New Application', new_application_path %></p>
+  <p><%= link_to 'New Application', new_doorkeeper_application_path %></p>
 
   <table class="zebra-striped">
     <thead>
@@ -19,7 +19,7 @@
         <tr id="application_<%= application.id %>">
           <td><%= link_to application.name, application %></td>
           <td><%= application.redirect_uri %></td>
-          <td><%= link_to 'Edit', edit_application_path(application) %></td>
+          <td><%= link_to 'Edit', edit_doorkeeper_application_path(application) %></td>
           <td><%= link_to 'Destroy', application, :confirm => 'Are you sure?', :method => :delete %></td>
         </tr>
       <% end %>
