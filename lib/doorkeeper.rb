@@ -22,4 +22,8 @@ module Doorkeeper
     autoload :Expirable, "doorkeeper/models/expirable"
     autoload :Revocable, "doorkeeper/models/revocable"
   end
+
+  module Rails
+    autoload :Routes, "doorkeeper/rails/routes"
+  end
 end
