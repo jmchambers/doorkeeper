@@ -1,7 +1,1 @@
-module Plucky
-  class Query
-    def delete_all
-      remove
-    end
-  end
-end
+Plucky::Query.class_eval { alias_method :delete_all, :remove  }
